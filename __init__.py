@@ -19,7 +19,7 @@ def open_main_dialog() -> None:
     dialog.ui.setupUi(dialog)
 
     # Trigger the dialog
-    dialog.exec_()
+    dialog.exec()
 
 
 # create a new menu item, "Generate Foreign Language Cards"

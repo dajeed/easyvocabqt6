@@ -16,7 +16,7 @@ import codecs
 from aqt import mw
 from aqt.qt import *
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "..", "site-packages"))
 import googletrans
@@ -49,9 +49,9 @@ class MainDialog(object):
         self.pushButton = QtWidgets.QPushButton(self.layoutWidget)
         self.pushButton.setObjectName("pushButton")
         self.gridLayout.addWidget(self.pushButton, 1, 0, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(188, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(188, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout.addItem(spacerItem, 1, 1, 1, 3)
-        spacerItem1 = QtWidgets.QSpacerItem(328, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(328, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout.addItem(spacerItem1, 2, 0, 1, 4)
         self.label_3 = QtWidgets.QLabel(self.layoutWidget)
         self.label_3.setObjectName("label_3")
@@ -65,11 +65,11 @@ class MainDialog(object):
         self.label = QtWidgets.QLabel(self.layoutWidget)
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 5, 2, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(48, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(48, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout.addItem(spacerItem2, 5, 3, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout.addItem(spacerItem3, 6, 2, 1, 2)
-        spacerItem4 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(138, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout.addItem(spacerItem4, 7, 2, 1, 2)
         self.spinBox = QtWidgets.QSpinBox(self.layoutWidget)
         self.spinBox.setProperty("value", 2)
@@ -95,8 +95,8 @@ class MainDialog(object):
         self.gridLayout.addWidget(self.checkBox_2, 7, 0, 1, 2)
         self.verticalLayout.addLayout(self.gridLayout)
         self.buttonBox = QtWidgets.QDialogButtonBox(self.layoutWidget)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel | QtWidgets.QDialogButtonBox.StandardButton.Ok)
         self.buttonBox.setCenterButtons(True)
         self.buttonBox.setObjectName("buttonBox")
         self.verticalLayout.addWidget(self.buttonBox)
@@ -180,7 +180,7 @@ class MainDialog(object):
         options['num_translations'] = num_translations
 
         generate.generate_cards(collection, deck, text, options, { 'main': Dialog, 'progress': progress })
-        progress.exec_()
+        progress.exec()
 
     # Custom dialog setup
     # Encapsulated in this function to limit the impact of UI changes / redesign

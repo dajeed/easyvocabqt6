@@ -12,7 +12,7 @@ import math
 
 from aqt.qt import *
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class ProgressDialog(object):
