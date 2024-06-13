@@ -2,7 +2,7 @@ import os
 
 from anki.media import media_paths_from_col_path
 
-from PyQt5 import QtWidgets
+from PyQt6 import QtWidgets
 from aqt import mw
 
 from threading import Event
